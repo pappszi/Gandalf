@@ -1,0 +1,6 @@
+Debug/*
+x64/*
+Gandalf/Debug/*
+Gandalf/x64/*
+*.vcxproj*
+*.sln
