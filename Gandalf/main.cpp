@@ -43,6 +43,9 @@ float lastFrame = 0.0f;
 // camera
 Camera camera(glm::vec3(-1.0f, 0.0f, 20.0f));
 
+glm::vec3 lightColor(1.0f, 1.0f, 1.0f);
+glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
+
 //const std::string MODEL_PATH = "models/nanosuit.obj";
 const std::string MODEL_PATH = "models/Coronavirus_hipoly.obj"; 
 //const std::string TEXTURE_PATH = "textures/chalet.jpg";
