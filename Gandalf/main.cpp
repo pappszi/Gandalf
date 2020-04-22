@@ -158,6 +158,7 @@ struct UniformBufferObject {
     alignas(16) glm::mat4 model;
     alignas(16) glm::mat4 view;
     alignas(16) glm::mat4 proj;
+    alignas(16) glm::vec3 viewPos;
 };
 
 class HelloTriangleApplication {
@@ -1488,6 +1489,7 @@ private:
         UniformBufferObject ubo = {};
         ubo.model = glm::scale(glm::rotate(glm::mat4(1.0f), time * glm::radians(30.0f), glm::vec3(0.0f, 1.0f, 0.0f)), glm::vec3(0.2f, 0.2f, 0.2f));
         ubo.view = camera.GetViewMatrix();
+        ubo.viewPos = glm::vec4(camera.Position, 0.0f) * glm::vec4(-1.0f, 1.0f, -1.0f, 1.0f);
         //ubo.view = glm::lookAt(glm::vec3(3.0f, 3.0f, 3.0f), glm::vec3(5.0f, 5.0f, -5.0f), glm::vec3(1.0f, 1.0f, 1.0f));
         ubo.proj = glm::perspective(glm::radians(45.0f), swapChainExtent.width / (float)swapChainExtent.height, 0.1f, 100.0f);
         ubo.proj[1][1] *= -1;
